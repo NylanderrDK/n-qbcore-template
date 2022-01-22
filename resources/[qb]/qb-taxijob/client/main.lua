@@ -195,7 +195,7 @@ RegisterNetEvent("qb-taxi:client:TakeVehicle", function(data)
     local coords = Config.Location
     QBCore.Functions.SpawnVehicle(data.model, function(veh)
         SetVehicleNumberPlateText(veh, "TAXI"..tostring(math.random(1000, 9999)))
-        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        exports['lj-fuel']:SetFuel(veh, 100.0)
         closeMenuFull()
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
